@@ -1,7 +1,7 @@
 *{ box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, sans-serif,-apple-system,
      BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
+/*for the headers*/
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@
 }
 
 body{ background:var(--colors-neutral-100, #F6F8FF); }
-
+/*for the dark mode*/
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -48,7 +48,7 @@ body{ background:var(--colors-neutral-100, #F6F8FF); }
     letter-spacing: 2px;
     cursor: pointer;
 }
-
+/*the main table*/
 h1{ font-size: 32px; 
   color: #164BAF;
   margin: 0px;
