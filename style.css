@@ -51,8 +51,7 @@ body{ background:var(--colors-neutral-100, #F6F8FF); }
 /*the main table*/
 h1{ font-size: 32px; 
   color: #164BAF;
-  margin: 0px;
-  text-align: center; 
+  margin: 0px; 
   letter-spacing: -2px;
   line-height: 150%;
 
@@ -60,7 +59,6 @@ h1{ font-size: 32px;
 
 p{ font-size: 18px;
  color: #0F2A44;
- text-align:center; 
  line-height: 150%;
 }
 
