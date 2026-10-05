@@ -1,7 +1,17 @@
-*{ box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, sans-serif,-apple-system,
-     BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-/*for the headers*/
+
+
+/* =========================
+   HEADER
+========================= */
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -13,26 +23,24 @@
     padding: 20px 0;
 }
 
-.planet-logo {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
+
+/* =========================
+   PLANET LOGO
+   Leave the individual
+   logo pieces for later
+========================= */
 
 .planet-logo {
-    width: 48px;
-    height: auto;
-    object-fit: contain;
+    position: relative;
+    width: 130px;
+    height: 45px;
 }
 
-.plan-logo{
-    width: 55px;
-    height: auto;
-    object-fit: contain;
-}
 
-body{ background:var(--colors-neutral-100, #F6F8FF); }
-/*for the dark mode*/
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
 .theme-toggle {
     display: flex;
     align-items: center;
@@ -41,30 +49,295 @@ body{ background:var(--colors-neutral-100, #F6F8FF); }
     background: transparent;
     color: #173b8f;
     border: none;
+
     padding: 8px 12px;
 
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 2px;
+
     cursor: pointer;
 }
-/*the main table*/
-h1{ font-size: 32px; 
-  color: #164BAF;
-  margin: 0px; 
-  letter-spacing: -2px;
-  line-height: 150%;
 
+.moon-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
 }
 
-p{ font-size: 18px;
- color: #0F2A44;
- line-height: 150%;
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+    background: #F6F8FF;
+    color: #0F2A44;
 }
 
-caption{ font-size: 18px;
- color: #0F2A44;
- text-align:center; 
- line-height: 150%;
- letter-spacing: -2%;
+
+/* =========================
+   TABLE SECTION
+========================= */
+
+.table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    font-size: 32px;
+    color: #164BAF;
+    margin-bottom: 5px;
+
+    letter-spacing: -1px;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 18px;
+    color: #0F2A44;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CAPTION
+========================= */
+
+caption {
+    font-size: 14px;
+    color: #0F2A44;
+    text-align: left;
+
+    line-height: 1.5;
+    margin-bottom: 8px;
+
+    caption-side: top;
+}
+
+
+/* =========================
+   PLANET TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #F6F8FF;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+thead th {
+    background: #164BAF;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 12px 15px;
+
+    text-align: center;
+
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+tbody td,
+tbody th {
+    padding: 14px 15px;
+
+    text-align: center;
+
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+
+/* Planet names + values */
+
+tbody td {
+    background: #F6F8FF;
+    color: #0F2A44;
+
+    font-size: 14px;
+}
+
+
+/* Terrestrial / Jovian / Gas Giants /
+   Ice Giants / Dwarf Planets */
+
+tbody th {
+    background: #D1E3FF;
+    color: #0F2A44;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    vertical-align: middle;
+}
+
+
+/* Remove the final borders */
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+    border-bottom: none;
+}
+
+tbody td:last-child,
+tbody th:last-child {
+    border-right: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 25px 0;
+
+    border-top: 1px solid #D1E3FF;
+
+    color: #164BAF;
+
+    font-size: 13px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #164BAF;
+}
+
+footer a {
+    color: #164BAF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark-mode {
+    background: #151A24;
+    color: white;
+}
+
+.dark-mode h1 {
+    color: #7FA7FF;
+}
+
+.dark-mode p,
+.dark-mode caption {
+    color: #D5DCEC;
+}
+
+.dark-mode table {
+    background: #202735;
+}
+
+.dark-mode tbody td {
+    background: #202735;
+    color: white;
+}
+
+.dark-mode tbody th {
+    background: #344B73;
+    color: white;
+}
+
+.dark-mode .theme-toggle {
+    color: white;
+}
+
+.dark-mode footer {
+    border-top-color: #344B73;
+    color: white;
+}
+
+.dark-mode footer p,
+.dark-mode footer a {
+    color: #D5DCEC;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        width: 92%;
+    }
+
+    .table {
+        width: 92%;
+        overflow-x: auto;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    footer {
+        width: 92%;
+        grid-template-columns: 1fr;
+    }
 }
