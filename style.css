@@ -20,7 +20,7 @@
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 12px 0;
 }
 
 
@@ -32,8 +32,103 @@
 
 .planet-logo {
     position: relative;
-    width: 130px;
-    height: 45px;
+    width: 90px;
+    height: 35px;
+}
+
+.planet-logo img{
+    position: absolute;
+    object-fit: contain;
+}
+
+.logo-piece-1{
+    width: 72px;
+    height:46px;
+    opacity: 1;
+    top:5px;
+    left: -0px;
+
+}
+
+.logo-piece-2{
+   width: 21px;
+   height: 13px;
+   opacity: 1;
+   top: 33px;
+   left: 32px;
+
+}
+
+.logo-piece-3{
+    width: 3px;
+height: 3px;
+opacity: 1;
+top: 1px;
+left: 54px;
+
+}
+
+.logo-piece-4{
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+    top: 0px;
+    left: 44px;
+
+}
+
+.logo-p {
+   width: 12px;
+   height: 18px;
+   opacity: 1;
+   top: 27px;
+   left: 60px;
+
+}
+
+.logo-l {
+    width:3px;
+   height:16px;
+   opacity:1;
+   top:24px;
+   left:73px;
+
+}
+
+.logo-a {
+   width:11px;
+height:13px;
+opacity:1;
+top:27px;
+left:78px;
+
+}
+
+.logo-n {
+ width:11px;
+ height:13px;
+ opacity:1;
+ top:27px;
+ left:90px;
+
+}
+
+.logo-e {
+ width:12px;
+ height:13px;
+ opacity:1;
+ top:27px;
+ left:102px;
+
+}
+
+.logo-t {
+ width:5px;
+ height:17px;
+ opacity:1;
+ top: 24px;
+ left: 115px;
+
 }
 
 
@@ -266,36 +361,59 @@ footer a:hover {
    DARK MODE
 ========================= */
 
+.logo-dark {
+    display: none;
+}
+.dark-mode .logo-dark {
+    display: block;
+}
+.dark-mode .logo-light {
+    display: none;
+}
+
 .dark-mode {
-    background: #151A24;
-    color: white;
+    background:var(--colors-neutral-900, #141D2F);
+;
 }
 
 .dark-mode h1 {
-    color: #7FA7FF;
+    color: #FFFFFF;
 }
 
-.dark-mode p,
+.dark-mode p{
+    color: #90A4D4;
+}
+
 .dark-mode caption {
-    color: #D5DCEC;
+    color:#D1E3FF;
+;
 }
 
 .dark-mode table {
-    background: #202735;
+    background: #141D2F;
+;
+}
+
+.dark-mode thead th {
+    background: #141D2F;
+
 }
 
 .dark-mode tbody td {
-    background: #202735;
-    color: white;
+    background:#F2F7FF;
+;
+    color: #000000;
 }
 
 .dark-mode tbody th {
-    background: #344B73;
-    color: white;
+    background: #90A4D4;
+;
+color: #000000;
 }
 
 .dark-mode .theme-toggle {
-    color: white;
+    color:var(--colors-neutral-200, #90A4D4);
+;
 }
 
 .dark-mode footer {
