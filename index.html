@@ -1,164 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Planet</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8" />
 
-<body>
-  <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Navbar section -->
-  <header class="nav">
-    <div class="nav-top">
-      <a href="/" class="logo-link" aria-label="Planet home">
-        <img src="logo_black.png" alt="Planet" class="logo">
-      </a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <label for="theme-toggle" class="theme-switch">
-        <span class="theme-label label-dark">Dark</span>
-        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-        </svg>
-        <span class="theme-label label-light">Light</span>
-        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"/>
-          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke-width="2" stroke-linecap="round" fill="none"/>
-        </svg>
-      </label>
-    </div>
+    <title>Document</title>
 
-    <form class="search" role="search" action="#" onsubmit="return false">
-      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="7"/>
-        <path d="M20 20l-3.5-3.5"/>
-      </svg>
-      <input type="search" class="search-input" placeholder="Search planet name" aria-label="Search planet name">
-      <button type="submit" class="search-btn">Search</button>
-    </form>
-  </header>
+    <link rel="stylesheet" href="style.css" />
 
-  <h1>hello world</h1>
-  <p>thank you for coming to class today</p>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
+    wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,
+    200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!--This is the table section-->
-  <section class="table">
+    <link
+      rel="icon"
+      type="image/png"
+      href="../Group-18-Capstone-Project/favcion/Vector.png"
+      sizes="96x96"
+    />
+  </head>
 
-    <h1>Planetary Facts at a Glance</h1>
-    <p>
-      Below is a comparative table of major planets in our solar system.
-      The data highlights,<br> key physical properties used by astronomers and researchers worldwide.
-    </p>
+  <body>
+    <header class="site-header">
+      <!--LIGHT MODE LOGO -->
+      <div class="planet-logo">
+        <img src="favcion/Vector (3).png" class="logo-piece-3" alt="" />
+        <img src="favcion/Vector (2).png" class="logo-piece-4" alt="" />
+        <img src="favcion/Vector.png" class="logo-piece-1" alt="" />
+        <img src="favcion/Vector (1).png" class="logo-piece-2" alt="" />
 
-    <caption>
-      Data about the planets of our solar system (Planetary facts taken from NASA)
-    </caption>
+        <img src="favcion/Letter P.png" class="logo-letter logo-p" alt="" />
+        <img src="favcion/Letter L.png" class="logo-letter logo-l" alt="" />
+        <img src="favcion/Letter A.png" class="logo-letter logo-a" alt="" />
+        <img src="favcion/Letter N.png" class="logo-letter logo-n" alt="" />
+        <img src="favcion/Letter E.png" class="logo-letter logo-e" alt="" />
+        <img src="favcion/Letter T.png" class="logo-letter logo-t" alt="" />
 
-    <table border="1" cellpadding="10" cellspacing="0">
+        <!--DARK MODE LOGO -->
+        <img src="favcion/logo.png" class="logo-dark" alt="" />
+      </div>
 
-      <thead>
-        <tr>
-          <th colspan="2"></th>
-          <th>Name</th>
-          <th>Mass (10 24kg)</th>
-          <th>Diameter (km)</th>
-        </tr>
-      </thead>
+      <button id="theme-btn" class="theme-toggle">
+        <span>DARK</span>
+        <img src="favcion/Theme icon.png" alt="" class="moon-icon" />
+      </button>
+    </header>
 
-      <tbody>
+    <!--This is the table section-->
+    <section class="table">
+      <h1>Planetary Facts at a Glance</h1>
+      <p>
+        Below is a comparative table of major planets in our solar system. The
+        data highlights,key physical properties used by astronomers and
+        researchers worldwide.
+      </p>
 
-        <!-- Terrestrial Planets -->
-        <tr>
-          <th scope="rowgroup" rowspan="4" colspan="2">Terrestrial Planets</th>
-          <td>Mercury</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+      <table>
+        <caption>
+          <b
+            >Data about the planets of our solar system (Planetary facts taken
+            from NASA)</b
+          >
+        </caption>
 
-        <tr>
-          <td>Venus</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+        <thead>
+          <tr>
+            <th colspan="2"></th>
+            <th>Name</th>
+            <th>Mass (10 24kg)</th>
+            <th>Diameter (km)</th>
+          </tr>
+        </thead>
 
-        <tr>
-          <td>Earth</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+        <tbody>
+          <!-- Terrestrial Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4" colspan="2">
+              Terrestrial Planets
+            </th>
+            <td>Mercury</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <tr>
-          <td>Mars</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <tr>
+            <td>Venus</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <!-- Jovian Planets -->
-        <tr>
-          <th scope="rowgroup" rowspan="4">Jovian Planets</th>
-          <th scope="rowgroup" rowspan="2"> Gas Giants</th>
-          <td>Jupiter</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <tr>
+            <td>Earth</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <tr>
-          <td>Saturn</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <tr>
+            <td>Mars</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <tr>
-          <th scope="rowgroup" rowspan="2">Ice Giants</th>
-          <td>Uranus</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <!-- Jovian Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4">Jovian Planets</th>
+            <th scope="rowgroup" rowspan="2">Gas Giants</th>
+            <td>Jupiter</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <tr>
-          <td>Neptune</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <tr>
+            <td>Saturn</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-        <tr>
-          <th scope="rowgroup" rowspan="1" colspan="2"> Dwarf Planets</th>
-          <td>Pluto</td>
-          <td>0.330</td>
-          <td>4,878</td>
-        </tr>
+          <tr>
+            <th scope="rowgroup" rowspan="2">Ice Giants</th>
+            <td>Uranus</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-      </tbody>
+          <tr>
+            <td>Neptune</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-    </table>
-  </section>
-
-  <h3>About</h3>
-  <ul>
-    <li>Rebecca Ibitoye</li> <br>
-    <li>Emmanuel Augustine Akpan</li><br>
-    <li>Edeh Joshua Nduka</li><br>
-    <li>Oka Chibuike Samuel</li><br>
-    <li>Omotayo Oluwatosin </li> <br>
-    <li>Daniel Obialo </li> <br>
-    <li>Carrena Oladipupo </li> <br>
-    <li>Nwosu Benjamin </li> <br>
-    <li>Ogunkunke Benjamin </li> <br>
-    <li>Igomu Favour </li> <br>
-    <li>Adejoh Agnes</li> <br>
-  </ul>
-
-  <br><br><br>
-  <footer>
-    <p>&copy; 2026 Design by Nwosu Benjamin.<br><br>Built by Hajime Cohort group 18. All rights reserved<br><br> TSAcedemy</p>
-  </footer>
-</body>
-
+          <tr>
+            <th scope="rowgroup" rowspan="1" colspan="2">Dwarf Planets</th>
+            <td>Pluto</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>

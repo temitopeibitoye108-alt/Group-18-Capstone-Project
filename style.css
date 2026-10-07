@@ -1,3 +1,440 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    Inter,
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+/* =========================
+   PLANET LOGO
+   Leave the individual
+   logo pieces for later
+========================= */
+
+.planet-logo {
+  position: relative;
+  width: 90px;
+  height: 35px;
+}
+
+.planet-logo img {
+  position: absolute;
+  object-fit: contain;
+}
+
+.logo-piece-1 {
+  width: 72px;
+  height: 46px;
+  opacity: 1;
+  top: 5px;
+  left: -0px;
+}
+
+.logo-piece-2 {
+  width: 21px;
+  height: 13px;
+  opacity: 1;
+  top: 33px;
+  left: 32px;
+}
+
+.logo-piece-3 {
+  width: 3px;
+  height: 3px;
+  opacity: 1;
+  top: 1px;
+  left: 54px;
+}
+
+.logo-piece-4 {
+  width: 6px;
+  height: 6px;
+  opacity: 1;
+  top: 0px;
+  left: 44px;
+}
+
+.logo-p {
+  width: 12px;
+  height: 18px;
+  opacity: 1;
+  top: 27px;
+  left: 60px;
+}
+
+.logo-l {
+  width: 3px;
+  height: 16px;
+  opacity: 1;
+  top: 24px;
+  left: 73px;
+}
+
+.logo-a {
+  width: 11px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 78px;
+}
+
+.logo-n {
+  width: 11px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 90px;
+}
+
+.logo-e {
+  width: 12px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 102px;
+}
+
+.logo-t {
+  width: 5px;
+  height: 17px;
+  opacity: 1;
+  top: 24px;
+  left: 115px;
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: transparent;
+  color: #173b8f;
+  border: none;
+
+  padding: 8px 12px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+}
+
+.moon-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+body {
+  background: #f6f8ff;
+  color: #0f2a44;
+}
+
+/* =========================
+   TABLE SECTION
+========================= */
+
+.table {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+  font-size: 32px;
+  color: #164baf;
+  margin-bottom: 5px;
+
+  letter-spacing: -1px;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 18px;
+  color: #0f2a44;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   CAPTION
+========================= */
+
+caption {
+  font-size: 14px;
+  color: #0f2a44;
+  text-align: left;
+
+  line-height: 1.5;
+  margin-bottom: 8px;
+
+  caption-side: top;
+}
+
+/* =========================
+   PLANET TABLE
+========================= */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  background: #f6f8ff;
+
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+thead th {
+  background: #164baf;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 12px 15px;
+
+  text-align: center;
+
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+  border-right: none;
+}
+
+/* =========================
+   TABLE BODY
+========================= */
+
+tbody td,
+tbody th {
+  padding: 14px 15px;
+
+  text-align: center;
+
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+/* Planet names + values */
+
+tbody td {
+  background: #f6f8ff;
+  color: #0f2a44;
+
+  font-size: 14px;
+}
+
+/* Terrestrial / Jovian / Gas Giants /
+   Ice Giants / Dwarf Planets */
+
+tbody th {
+  background: #d1e3ff;
+  color: #0f2a44;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  vertical-align: middle;
+}
+
+/* Remove the final borders */
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: none;
+}
+
+tbody td:last-child,
+tbody th:last-child {
+  border-right: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 25px 0;
+
+  border-top: 1px solid #d1e3ff;
+
+  color: #164baf;
+
+  font-size: 13px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #164baf;
+}
+
+footer a {
+  color: #164baf;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.logo-dark {
+  display: none;
+}
+.dark-mode .logo-dark {
+  display: block;
+}
+.dark-mode .logo-light {
+  display: none;
+}
+
+.dark-mode {
+  background: var(--colors-neutral-900, #141d2f);
+}
+
+.dark-mode h1 {
+  color: #ffffff;
+}
+
+.dark-mode p {
+  color: #90a4d4;
+}
+
+.dark-mode caption {
+  color: #d1e3ff;
+}
+
+.dark-mode table {
+  background: #141d2f;
+}
+
+.dark-mode thead th {
+  background: #141d2f;
+}
+
+.dark-mode tbody td {
+  background: #f2f7ff;
+  color: #000000;
+}
+
+.dark-mode tbody th {
+  background: #90a4d4;
+  color: #000000;
+}
+
+.dark-mode .theme-toggle {
+  color: var(--colors-neutral-200, #90a4d4);
+}
+
+.dark-mode footer {
+  border-top-color: #344b73;
+  color: white;
+}
+
+.dark-mode footer p,
+.dark-mode footer a {
+  color: #d5dcec;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .site-header {
+    width: 92%;
+  }
+
+  .table {
+    width: 92%;
+    overflow-x: auto;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  table {
+    min-width: 650px;
+  }
+
+  footer {
+    width: 92%;
+    grid-template-columns: 1fr;
+  }
+}
 :root {
   --bg: #f6f8ff;
   --surface: #ffffff;
@@ -7,7 +444,8 @@
   --blue-hover: #5b8ef5;
   --shadow: 0 2px 12px rgba(26, 35, 71, 0.06);
   --logo-filter: none;
-  --font: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font:
+    "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
 body:has(#theme-toggle:checked) {
@@ -35,7 +473,9 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .theme-checkbox {
@@ -139,7 +579,9 @@ body:has(#theme-toggle:checked) .icon-sun {
   border: 2px solid transparent;
   border-radius: 10px;
   box-shadow: var(--shadow);
-  transition: border-color 0.2s ease, background-color 0.25s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.25s ease;
 }
 
 .search:focus-within {
