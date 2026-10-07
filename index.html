@@ -1,14 +1,12 @@
 <!doctype html>
 <html lang="en">
-
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
 
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -16,154 +14,139 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
     wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,
-    200..800;1,200..800&display=swap" rel="stylesheet">
+    200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="icon" type="image/png" href="../Group-18-Capstone-Project/favcion/Vector.png" sizes="96x96"/>
-
+    <link
+      rel="icon"
+      type="image/png"
+      href="../Group-18-Capstone-Project/favcion/Vector.png"
+      sizes="96x96"
+    />
   </head>
 
   <body>
-
     <header class="site-header">
+      <!--LIGHT MODE LOGO -->
+      <div class="planet-logo">
+        <img src="favcion/Vector (3).png" class="logo-piece-3" alt="" />
+        <img src="favcion/Vector (2).png" class="logo-piece-4" alt="" />
+        <img src="favcion/Vector.png" class="logo-piece-1" alt="" />
+        <img src="favcion/Vector (1).png" class="logo-piece-2" alt="" />
 
-    <!--LIGHT MODE LOGO -->
-    <div class="planet-logo">
-     
-    <img src="favcion/Vector (3).png" class="logo-piece-3" alt="">
-    <img src="favcion/Vector (2).png" class="logo-piece-4" alt="">
-    <img src="favcion/Vector.png" class="logo-piece-1" alt="">
-    <img src="favcion/Vector (1).png" class="logo-piece-2" alt="">
+        <img src="favcion/Letter P.png" class="logo-letter logo-p" alt="" />
+        <img src="favcion/Letter L.png" class="logo-letter logo-l" alt="" />
+        <img src="favcion/Letter A.png" class="logo-letter logo-a" alt="" />
+        <img src="favcion/Letter N.png" class="logo-letter logo-n" alt="" />
+        <img src="favcion/Letter E.png" class="logo-letter logo-e" alt="" />
+        <img src="favcion/Letter T.png" class="logo-letter logo-t" alt="" />
 
-    <img src="favcion/Letter P.png" class="logo-letter logo-p" alt="">
-    <img src="favcion/Letter L.png" class="logo-letter logo-l" alt="">
-    <img src="favcion/Letter A.png" class="logo-letter logo-a" alt="">
-    <img src="favcion/Letter N.png" class="logo-letter logo-n" alt="">
-    <img src="favcion/Letter E.png" class="logo-letter logo-e" alt="">
-    <img src="favcion/Letter T.png" class="logo-letter logo-t" alt="">
+        <!--DARK MODE LOGO -->
+        <img src="favcion/logo.png" class="logo-dark" alt="" />
+      </div>
 
-    <!--DARK MODE LOGO -->
-    <img src="favcion/logo.png" class="logo-dark" alt="">
-
-</div>
-
-    <button id="theme-btn" class="theme-toggle">
+      <button id="theme-btn" class="theme-toggle">
         <span>DARK</span>
-        <img src="favcion/Theme icon.png" alt="" class="moon-icon">
-    </button>
-
-</header>
-
+        <img src="favcion/Theme icon.png" alt="" class="moon-icon" />
+      </button>
+    </header>
 
     <!--This is the table section-->
     <section class="table">
+      <h1>Planetary Facts at a Glance</h1>
+      <p>
+        Below is a comparative table of major planets in our solar system. The
+        data highlights,key physical properties used by astronomers and
+        researchers worldwide.
+      </p>
 
-    <h1>Planetary Facts at a Glance</h1>
-    <p>
-      Below is a comparative table of major planets in our solar system. 
-     The data highlights,key physical properties used by astronomers and researchers worldwide.
-    </p>
-
-    <table>
-
+      <table>
         <caption>
-         <b>Data about the planets of our solar system (Planetary facts taken from NASA)</b>
+          <b
+            >Data about the planets of our solar system (Planetary facts taken
+            from NASA)</b
+          >
         </caption>
 
         <thead>
-
-            <tr>
-
-                <th colspan="2"></th>
-
-                <th>Name</th>
-
-                <th>Mass (10 24kg)</th>
-
-                <th>Diameter (km)</th>
-
-
-            </tr>
-
+          <tr>
+            <th colspan="2"></th>
+            <th>Name</th>
+            <th>Mass (10 24kg)</th>
+            <th>Diameter (km)</th>
+          </tr>
         </thead>
 
         <tbody>
+          <!-- Terrestrial Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4" colspan="2">
+              Terrestrial Planets
+            </th>
+            <td>Mercury</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            <!-- Terrestrial Planets -->
+          <tr>
+            <td>Venus</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            <tr>
+          <tr>
+            <td>Earth</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-                <th scope="rowgroup" rowspan="4" colspan="2">Terrestrial Planets</th>
-                <td>Mercury</td>
-                <td>0.330</td>
-                <td>4,878</td>
+          <tr>
+            <td>Mars</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            </tr>
+          <!-- Jovian Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4">Jovian Planets</th>
+            <th scope="rowgroup" rowspan="2">Gas Giants</th>
+            <td>Jupiter</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            <tr>
+          <tr>
+            <td>Saturn</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-                <td>Venus</td>
-                <td>0.330</td>
-                <td>4,878</td>
+          <tr>
+            <th scope="rowgroup" rowspan="2">Ice Giants</th>
+            <td>Uranus</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            </tr>
+          <tr>
+            <td>Neptune</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
 
-            <tr>
-
-                <td>Earth</td>
-                <td>0.330</td>
-                <td>4,878</td>
-
-            </tr>
-
-            <tr>
-
-                <td>Mars</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <!-- Jovian Planets -->
-            <tr>
-                <th scope="rowgroup" rowspan="4">Jovian Planets</th>
-                <th scope="rowgroup" rowspan="2"> Gas Giants</th>
-                <td>Jupiter</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <td>Saturn</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <th scope="rowgroup" rowspan="2">Ice Giants</th>
-                <td>Uranus</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <td>Neptune</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <th scope="rowgroup" rowspan="1" colspan="2"> Dwarf Planets</th>
-                <td>Pluto</td>
-                <td>0.330</td>
-                <td>4,878</td>
-            </tr>
-
+          <tr>
+            <th scope="rowgroup" rowspan="1" colspan="2">Dwarf Planets</th>
+            <td>Pluto</td>
+            <td>0.330</td>
+            <td>4,878</td>
+          </tr>
         </tbody>
-
-            
-    </table>
-  </section>
-  <script src="script.js"></script>
+      </table>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>

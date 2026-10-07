@@ -1,28 +1,36 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Inter, sans-serif, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    Inter,
+    sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
-
 
 /* =========================
    HEADER
 ========================= */
 
 .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 0;
 }
-
 
 /* =========================
    PLANET LOGO
@@ -31,242 +39,224 @@
 ========================= */
 
 .planet-logo {
-    position: relative;
-    width: 90px;
-    height: 35px;
+  position: relative;
+  width: 90px;
+  height: 35px;
 }
 
-.planet-logo img{
-    position: absolute;
-    object-fit: contain;
+.planet-logo img {
+  position: absolute;
+  object-fit: contain;
 }
 
-.logo-piece-1{
-    width: 72px;
-    height:46px;
-    opacity: 1;
-    top:5px;
-    left: -0px;
-
+.logo-piece-1 {
+  width: 72px;
+  height: 46px;
+  opacity: 1;
+  top: 5px;
+  left: -0px;
 }
 
-.logo-piece-2{
-   width: 21px;
-   height: 13px;
-   opacity: 1;
-   top: 33px;
-   left: 32px;
-
+.logo-piece-2 {
+  width: 21px;
+  height: 13px;
+  opacity: 1;
+  top: 33px;
+  left: 32px;
 }
 
-.logo-piece-3{
-    width: 3px;
-height: 3px;
-opacity: 1;
-top: 1px;
-left: 54px;
-
+.logo-piece-3 {
+  width: 3px;
+  height: 3px;
+  opacity: 1;
+  top: 1px;
+  left: 54px;
 }
 
-.logo-piece-4{
-    width: 6px;
-    height: 6px;
-    opacity: 1;
-    top: 0px;
-    left: 44px;
-
+.logo-piece-4 {
+  width: 6px;
+  height: 6px;
+  opacity: 1;
+  top: 0px;
+  left: 44px;
 }
 
 .logo-p {
-   width: 12px;
-   height: 18px;
-   opacity: 1;
-   top: 27px;
-   left: 60px;
-
+  width: 12px;
+  height: 18px;
+  opacity: 1;
+  top: 27px;
+  left: 60px;
 }
 
 .logo-l {
-    width:3px;
-   height:16px;
-   opacity:1;
-   top:24px;
-   left:73px;
-
+  width: 3px;
+  height: 16px;
+  opacity: 1;
+  top: 24px;
+  left: 73px;
 }
 
 .logo-a {
-   width:11px;
-height:13px;
-opacity:1;
-top:27px;
-left:78px;
-
+  width: 11px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 78px;
 }
 
 .logo-n {
- width:11px;
- height:13px;
- opacity:1;
- top:27px;
- left:90px;
-
+  width: 11px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 90px;
 }
 
 .logo-e {
- width:12px;
- height:13px;
- opacity:1;
- top:27px;
- left:102px;
-
+  width: 12px;
+  height: 13px;
+  opacity: 1;
+  top: 27px;
+  left: 102px;
 }
 
 .logo-t {
- width:5px;
- height:17px;
- opacity:1;
- top: 24px;
- left: 115px;
-
+  width: 5px;
+  height: 17px;
+  opacity: 1;
+  top: 24px;
+  left: 115px;
 }
-
 
 /* =========================
    DARK MODE BUTTON
 ========================= */
 
 .theme-toggle {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    background: transparent;
-    color: #173b8f;
-    border: none;
+  background: transparent;
+  color: #173b8f;
+  border: none;
 
-    padding: 8px 12px;
+  padding: 8px 12px;
 
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .moon-icon {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
-
 
 /* =========================
    PAGE
 ========================= */
 
 body {
-    background: #F6F8FF;
-    color: #0F2A44;
+  background: #f6f8ff;
+  color: #0f2a44;
 }
-
 
 /* =========================
    TABLE SECTION
 ========================= */
 
 .table {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
 }
-
 
 /* =========================
    HEADING
 ========================= */
 
 h1 {
-    font-size: 32px;
-    color: #164BAF;
-    margin-bottom: 5px;
+  font-size: 32px;
+  color: #164baf;
+  margin-bottom: 5px;
 
-    letter-spacing: -1px;
-    line-height: 1.5;
+  letter-spacing: -1px;
+  line-height: 1.5;
 }
 
 p {
-    font-size: 18px;
-    color: #0F2A44;
-    line-height: 1.5;
-    margin-bottom: 25px;
+  font-size: 18px;
+  color: #0f2a44;
+  line-height: 1.5;
+  margin-bottom: 25px;
 }
-
 
 /* =========================
    CAPTION
 ========================= */
 
 caption {
-    font-size: 14px;
-    color: #0F2A44;
-    text-align: left;
+  font-size: 14px;
+  color: #0f2a44;
+  text-align: left;
 
-    line-height: 1.5;
-    margin-bottom: 8px;
+  line-height: 1.5;
+  margin-bottom: 8px;
 
-    caption-side: top;
+  caption-side: top;
 }
-
 
 /* =========================
    PLANET TABLE
 ========================= */
 
 table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 
-    background: #F6F8FF;
+  background: #f6f8ff;
 
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================
    TABLE HEADER
 ========================= */
 
 thead th {
-    background: #164BAF;
-    color: white;
+  background: #164baf;
+  color: white;
 
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 
-    padding: 12px 15px;
+  padding: 12px 15px;
 
-    text-align: center;
+  text-align: center;
 
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 thead th:first-child {
-    border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 thead th:last-child {
-    border-top-right-radius: 10px;
-    border-right: none;
+  border-top-right-radius: 10px;
+  border-right: none;
 }
-
 
 /* =========================
    TABLE BODY
@@ -274,188 +264,439 @@ thead th:last-child {
 
 tbody td,
 tbody th {
-    padding: 14px 15px;
+  padding: 14px 15px;
 
-    text-align: center;
+  text-align: center;
 
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
-
 
 /* Planet names + values */
 
 tbody td {
-    background: #F6F8FF;
-    color: #0F2A44;
+  background: #f6f8ff;
+  color: #0f2a44;
 
-    font-size: 14px;
+  font-size: 14px;
 }
-
 
 /* Terrestrial / Jovian / Gas Giants /
    Ice Giants / Dwarf Planets */
 
 tbody th {
-    background: #D1E3FF;
-    color: #0F2A44;
+  background: #d1e3ff;
+  color: #0f2a44;
 
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 
-    vertical-align: middle;
+  vertical-align: middle;
 }
-
 
 /* Remove the final borders */
 
 tbody tr:last-child td,
 tbody tr:last-child th {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 tbody td:last-child,
 tbody th:last-child {
-    border-right: none;
+  border-right: none;
 }
-
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    width: 90%;
-    max-width: 1200px;
+  width: 90%;
+  max-width: 1200px;
 
-    margin: 0 auto;
-    padding: 25px 0;
+  margin: 0 auto;
+  padding: 25px 0;
 
-    border-top: 1px solid #D1E3FF;
+  border-top: 1px solid #d1e3ff;
 
-    color: #164BAF;
+  color: #164baf;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 footer p {
-    font-size: 13px;
-    color: #164BAF;
+  font-size: 13px;
+  color: #164baf;
 }
 
 footer a {
-    color: #164BAF;
-    text-decoration: none;
+  color: #164baf;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 /* =========================
    DARK MODE
 ========================= */
 
 .logo-dark {
-    display: none;
+  display: none;
 }
 .dark-mode .logo-dark {
-    display: block;
+  display: block;
 }
 .dark-mode .logo-light {
-    display: none;
+  display: none;
 }
 
 .dark-mode {
-    background:var(--colors-neutral-900, #141D2F);
-;
+  background: var(--colors-neutral-900, #141d2f);
 }
 
 .dark-mode h1 {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
-.dark-mode p{
-    color: #90A4D4;
+.dark-mode p {
+  color: #90a4d4;
 }
 
 .dark-mode caption {
-    color:#D1E3FF;
-;
+  color: #d1e3ff;
 }
 
 .dark-mode table {
-    background: #141D2F;
-;
+  background: #141d2f;
 }
 
 .dark-mode thead th {
-    background: #141D2F;
-
+  background: #141d2f;
 }
 
 .dark-mode tbody td {
-    background:#F2F7FF;
-;
-    color: #000000;
+  background: #f2f7ff;
+  color: #000000;
 }
 
 .dark-mode tbody th {
-    background: #90A4D4;
-;
-color: #000000;
+  background: #90a4d4;
+  color: #000000;
 }
 
 .dark-mode .theme-toggle {
-    color:var(--colors-neutral-200, #90A4D4);
-;
+  color: var(--colors-neutral-200, #90a4d4);
 }
 
 .dark-mode footer {
-    border-top-color: #344B73;
-    color: white;
+  border-top-color: #344b73;
+  color: white;
 }
 
 .dark-mode footer p,
 .dark-mode footer a {
-    color: #D5DCEC;
+  color: #d5dcec;
 }
-
 
 /* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
+  .site-header {
+    width: 92%;
+  }
 
-    .site-header {
-        width: 92%;
-    }
+  .table {
+    width: 92%;
+    overflow-x: auto;
+  }
 
-    .table {
-        width: 92%;
-        overflow-x: auto;
-    }
+  h1 {
+    font-size: 26px;
+  }
 
-    h1 {
-        font-size: 26px;
-    }
+  p {
+    font-size: 15px;
+  }
 
-    p {
-        font-size: 15px;
-    }
+  table {
+    min-width: 650px;
+  }
 
-    table {
-        min-width: 650px;
-    }
+  footer {
+    width: 92%;
+    grid-template-columns: 1fr;
+  }
+}
+:root {
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --text: #1a2347;
+  --muted: #8a93b2;
+  --blue: #2f6fed;
+  --blue-hover: #5b8ef5;
+  --shadow: 0 2px 12px rgba(26, 35, 71, 0.06);
+  --logo-filter: none;
+  --font:
+    "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
 
-    footer {
-        width: 92%;
-        grid-template-columns: 1fr;
-    }
+body:has(#theme-toggle:checked) {
+  --bg: #131a35;
+  --surface: #1e2a52;
+  --text: #ffffff;
+  --muted: #9aa5cc;
+  --shadow: none;
+  --logo-filter: invert(1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.theme-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 32px clamp(24px, 5vw, 80px) 0;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.logo-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  filter: var(--logo-filter);
+  transition: filter 0.25s ease;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.theme-switch:hover {
+  border-color: var(--blue);
+}
+
+.theme-checkbox:focus-visible + .nav .theme-switch {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.icon-moon {
+  stroke: none;
+}
+
+.icon-sun {
+  fill: currentColor;
+}
+
+.label-light,
+.icon-sun {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .label-dark,
+body:has(#theme-toggle:checked) .icon-moon {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .label-light {
+  display: inline;
+}
+
+body:has(#theme-toggle:checked) .icon-sun {
+  display: block;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 16px;
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.25s ease;
+}
+
+.search:focus-within {
+  border-color: var(--blue);
+}
+
+.search-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-btn {
+  flex: none;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #ffffff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background: var(--blue-hover);
+}
+
+.search-btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    padding: 24px 24px 0;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 20px 16px 0;
+  }
+
+  .nav-top {
+    margin-bottom: 16px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .theme-label {
+    font-size: 8px;
+  }
+
+  .search {
+    gap: 8px;
+    padding: 6px 6px 6px 12px;
+  }
+
+  .search-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .search-input {
+    padding: 8px 0;
+    font-size: 11px;
+  }
+
+  .search-btn {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

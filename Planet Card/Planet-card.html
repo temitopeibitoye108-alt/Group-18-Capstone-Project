@@ -1,0 +1,214 @@
+```html
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Planet Card</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Planet Card Styles -->
+  <link rel="stylesheet" href="planet-card.css" />
+</head>
+
+<body>
+
+  <main>
+    <!-- Planet Card will be rendered here by JavaScript -->
+    <section
+      id="planet-card-container"
+      aria-live="polite"
+      aria-label="Planet details"
+    ></section>
+  </main>
+
+  <!--
+    Planet Card Template
+    JavaScript clones this template and fills in the planet information.
+  -->
+  <template id="planet-card-template">
+
+    <article class="planet-card">
+
+      <!-- Planet Header -->
+      <header class="planet-card__header">
+
+        <figure class="planet-card__figure">
+          <img
+            class="planet-card__image"
+            data-field="image"
+            src=""
+            alt=""
+            width="100"
+            height="100"
+          />
+        </figure>
+
+        <div class="planet-card__heading">
+          <h2
+            class="planet-card__name"
+            data-field="name"
+          ></h2>
+
+          <p
+            class="planet-card__type"
+            data-field="type"
+          ></p>
+        </div>
+
+      </header>
+
+      <!-- Planet Description -->
+      <p
+        class="planet-card__description"
+        data-field="description"
+      ></p>
+
+      <!-- Planet Statistics -->
+      <dl class="planet-card__stats">
+
+        <div class="planet-card__stat">
+          <dt>Gravity</dt>
+          <dd data-field="gravity"></dd>
+        </div>
+
+        <div class="planet-card__stat">
+          <dt>Mass</dt>
+          <dd data-field="mass"></dd>
+        </div>
+
+        <div class="planet-card__stat">
+          <dt>Period</dt>
+          <dd data-field="period"></dd>
+        </div>
+
+      </dl>
+
+      <!-- Additional Planet Facts -->
+      <ul class="planet-card__facts">
+
+        <!-- Temperature -->
+        <li title="Temperature (K)">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <path
+              d="M14 14.8V5a4 4 0 0 0-8 0v9.8a6 6 0 1 0 8 0ZM10 3a2 2 0 0 1 2 2v1h-4V5a2 2 0 0 1 2-2Z"
+            />
+          </svg>
+
+          <span class="visually-hidden">
+            Temperature in kelvin:
+          </span>
+
+          <span data-field="temperature"></span>
+        </li>
+
+        <!-- Moons -->
+        <li title="Moons">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <path
+              d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"
+            />
+          </svg>
+
+          <span class="visually-hidden">
+            Moons:
+          </span>
+
+          <span data-field="moons"></span>
+        </li>
+
+        <!-- Diameter -->
+        <li title="Diameter (km)">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+          </svg>
+
+          <span class="visually-hidden">
+            Diameter in kilometres:
+          </span>
+
+          <span data-field="diameter"></span>
+        </li>
+
+        <!-- Distance from Sun -->
+        <li title="Distance from the Sun (10^6 km)">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            focusable="false"
+          >
+            <path
+              d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-6 1.5 3h-3L12 2Zm0 20-1.5-3h3L12 22ZM2 12l3-1.5v3L2 12Zm20 0-3 1.5v-3L22 12ZM4.9 4.9l3.2 1-2.2 2.2-1-3.2Zm14.2 14.2-3.2-1 2.2-2.2 1 3.2ZM4.9 19.1l1-3.2 2.2 2.2-3.2 1Zm14.2-14.2-1 3.2-2.2-2.2 3.2-1Z"
+            />
+          </svg>
+
+          <span class="visually-hidden">
+            Distance from the Sun in million kilometres:
+          </span>
+
+          <span data-field="distance"></span>
+        </li>
+
+      </ul>
+
+    </article>
+
+  </template>
+
+  <!-- Demo Theme Toggle -->
+  <button
+    id="theme-toggle"
+    class="demo-toggle"
+    type="button"
+    aria-label="Toggle dark and light theme"
+  >
+    Toggle Theme
+  </button>
+
+  <!-- Planet Card JavaScript -->
+  <script src="planet-card.js"></script>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById("theme-toggle");
+
+    themeToggle.addEventListener("click", () => {
+      const root = document.documentElement;
+
+      root.dataset.theme =
+        root.dataset.theme === "dark"
+          ? "light"
+          : "dark";
+    });
+
+    // Load default planet
+    loadPlanetCard("Earth");
+  </script>
+
+</body>
+</html>
+
