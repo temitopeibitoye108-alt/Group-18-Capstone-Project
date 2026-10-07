@@ -1,0 +1,260 @@
+:root {
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --text: #1a2347;
+  --muted: #8a93b2;
+  --blue: #2f6fed;
+  --blue-hover: #5b8ef5;
+  --shadow: 0 2px 12px rgba(26, 35, 71, 0.06);
+  --logo-filter: none;
+  --font: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+body:has(#theme-toggle:checked) {
+  --bg: #131a35;
+  --surface: #1e2a52;
+  --text: #ffffff;
+  --muted: #9aa5cc;
+  --shadow: none;
+  --logo-filter: invert(1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 32px clamp(24px, 5vw, 80px) 0;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.logo-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  filter: var(--logo-filter);
+  transition: filter 0.25s ease;
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.theme-switch:hover {
+  border-color: var(--blue);
+}
+
+.theme-checkbox:focus-visible + .nav .theme-switch {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.theme-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.icon-moon {
+  stroke: none;
+}
+
+.icon-sun {
+  fill: currentColor;
+}
+
+.label-light,
+.icon-sun {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .label-dark,
+body:has(#theme-toggle:checked) .icon-moon {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .label-light {
+  display: inline;
+}
+
+body:has(#theme-toggle:checked) .icon-sun {
+  display: block;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 16px;
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, background-color 0.25s ease;
+}
+
+.search:focus-within {
+  border-color: var(--blue);
+}
+
+.search-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-btn {
+  flex: none;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #ffffff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background: var(--blue-hover);
+}
+
+.search-btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    padding: 24px 24px 0;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 20px 16px 0;
+  }
+
+  .nav-top {
+    margin-bottom: 16px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .theme-label {
+    font-size: 8px;
+  }
+
+  .search {
+    gap: 8px;
+    padding: 6px 6px 6px 12px;
+  }
+
+  .search-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .search-input {
+    padding: 8px 0;
+    font-size: 11px;
+  }
+
+  .search-btn {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
