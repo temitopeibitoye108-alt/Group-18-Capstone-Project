@@ -1,169 +1,255 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<body>
+  <input type="checkbox" id="theme-toggle" class="theme-checkbox">
 
-    <meta charset="UTF-8">
+  <!-- Navbar section -->
+  <header class="nav container">
+    <div class="nav-top">
+      <a href="index.html" class="logo-link" aria-label="Planet home">
+        <img src="logo_black.png" alt="Planet" class="logo">
+      </a>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <label for="theme-toggle" class="theme-switch">
+        <span class="theme-label label-dark">Dark</span>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <span class="theme-label label-light">Light</span>
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+      </label>
+    </div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <form class="search" role="search" action="#" onsubmit="return false">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M20 20l-3.5-3.5"/>
+      </svg>
+      <input type="search" class="search-input" placeholder="Search planet name" aria-label="Search planet name">
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+  </header>
 
-    <title>Document</title>
+  <main class="container">
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- Planet card section (filled in by script.js) -->
+    <section id="planet-card-container" class="planet-section" aria-live="polite" aria-label="Planet details"></section>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,
-    wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,
-    200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Planetary facts table section -->
+    <section class="facts" aria-labelledby="facts-title">
 
-    <link rel="icon" type="image/png" href="../Group-18-Capstone-Project/favcion/Vector.png" sizes="96x96"/>
+      <h1 id="facts-title" class="facts__title">Planetary Facts at a Glance</h1>
+      <p class="facts__intro">
+        Below is a comparative table of major planets in our solar system.
+        The data highlights key physical properties used by astronomers and researchers worldwide.
+      </p>
 
-  </head>
-
-  <body>
-
-    <header class="site-header">
-
-    <!--LIGHT MODE LOGO -->
-    <div class="planet-logo">
-     
-    <img src="favcion/Vector (3).png" class="logo-piece-3" alt="">
-    <img src="favcion/Vector (2).png" class="logo-piece-4" alt="">
-    <img src="favcion/Vector.png" class="logo-piece-1" alt="">
-    <img src="favcion/Vector (1).png" class="logo-piece-2" alt="">
-
-    <img src="favcion/Letter P.png" class="logo-letter logo-p" alt="">
-    <img src="favcion/Letter L.png" class="logo-letter logo-l" alt="">
-    <img src="favcion/Letter A.png" class="logo-letter logo-a" alt="">
-    <img src="favcion/Letter N.png" class="logo-letter logo-n" alt="">
-    <img src="favcion/Letter E.png" class="logo-letter logo-e" alt="">
-    <img src="favcion/Letter T.png" class="logo-letter logo-t" alt="">
-
-    <!--DARK MODE LOGO -->
-    <img src="favcion/logo.png" class="logo-dark" alt="">
-
-</div>
-
-    <button id="theme-btn" class="theme-toggle">
-        <span>DARK</span>
-        <img src="favcion/Theme icon.png" alt="" class="moon-icon">
-    </button>
-
-</header>
-
-
-    <!--This is the table section-->
-    <section class="table">
-
-    <h1>Planetary Facts at a Glance</h1>
-    <p>
-      Below is a comparative table of major planets in our solar system. 
-     The data highlights,key physical properties used by astronomers and researchers worldwide.
-    </p>
-
-    <table>
-
+      <table class="facts__table">
         <caption>
-         <b>Data about the planets of our solar system (Planetary facts taken from NASA)</b>
+          Data about the planets of our solar system
+          <span class="facts__source">(Planetary facts taken from NASA)</span>
         </caption>
 
         <thead>
-
-            <tr>
-
-                <th colspan="2"></th>
-
-                <th>Name</th>
-
-                <th class="mass-column">Mass (10 24kg)</th>
-
-                <th>Diameter (km)</th>
-
-
-            </tr>
-
+          <tr>
+            <td colspan="2"></td>
+            <th scope="col">Name</th>
+            <th scope="col" class="facts__mass">Mass (10<sup>24</sup>kg)</th>
+            <th scope="col">Diameter (km)</th>
+          </tr>
         </thead>
 
         <tbody>
 
-            <!-- Terrestrial Planets -->
+          <!-- Terrestrial Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4" colspan="2">Terrestrial Planets</th>
+            <td>Mercury</td>
+            <td class="facts__mass">0.330</td>
+            <td>4,879</td>
+          </tr>
 
-            <tr>
+          <tr>
+            <td>Venus</td>
+            <td class="facts__mass">4.87</td>
+            <td>12,104</td>
+          </tr>
 
-                <th scope="rowgroup" rowspan="4" colspan="2">Terrestrial Planets</th>
-                <td>Mercury</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
+          <tr>
+            <td>Earth</td>
+            <td class="facts__mass">5.97</td>
+            <td>12,756</td>
+          </tr>
 
-            </tr>
+          <tr>
+            <td>Mars</td>
+            <td class="facts__mass">0.642</td>
+            <td>6,792</td>
+          </tr>
 
-            <tr>
+          <!-- Jovian Planets -->
+          <tr>
+            <th scope="rowgroup" rowspan="4">Jovian Planets</th>
+            <th scope="rowgroup" rowspan="2">Gas Giants</th>
+            <td>Jupiter</td>
+            <td class="facts__mass">1,898</td>
+            <td>142,984</td>
+          </tr>
 
-                <td>Venus</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
+          <tr>
+            <td>Saturn</td>
+            <td class="facts__mass">568</td>
+            <td>120,536</td>
+          </tr>
 
-            </tr>
+          <tr>
+            <th scope="rowgroup" rowspan="2">Ice Giants</th>
+            <td>Uranus</td>
+            <td class="facts__mass">86.8</td>
+            <td>51,118</td>
+          </tr>
 
-            <tr>
+          <tr>
+            <td>Neptune</td>
+            <td class="facts__mass">102</td>
+            <td>49,528</td>
+          </tr>
 
-                <td>Earth</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-
-            </tr>
-
-            <tr>
-
-                <td>Mars</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <!-- Jovian Planets -->
-            <tr>
-                <th scope="rowgroup" rowspan="4">Jovian Planets</th>
-                <th scope="rowgroup" rowspan="2"> Gas Giants</th>
-                <td>Jupiter</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <td>Saturn</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <th scope="rowgroup" rowspan="2">Ice Giants</th>
-                <td>Uranus</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <td>Neptune</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
-
-            <tr>
-                <th scope="rowgroup" rowspan="1" colspan="2"> Dwarf Planets</th>
-                <td>Pluto</td>
-                <td class="mass-column">0.330</td>
-                <td>4,878</td>
-            </tr>
+          <!-- Dwarf Planets -->
+          <tr>
+            <th scope="rowgroup" colspan="2">Dwarf Planets</th>
+            <td>Pluto</td>
+            <td class="facts__mass">0.0130</td>
+            <td>2,376</td>
+          </tr>
 
         </tbody>
+      </table>
+    </section>
 
-            
-    </table>
-  </section>
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer container">
+
+    <section class="site-footer__about" aria-labelledby="about-title">
+      <h2 id="about-title" class="site-footer__title">About</h2>
+      <p class="site-footer__intro">
+        We are Group 18 of the TS Academy Hajime cohort, a team of frontend
+        developers who built this planet explorer with HTML, CSS and JavaScript.
+      </p>
+      <ul class="site-footer__members" aria-label="Team members">
+        <li>Rebecca Ibitoye</li>
+        <li>Emmanuel Augustine Akpan</li>
+        <li>Edeh Joshua Nduka</li>
+        <li>Oka Chibuike Samuel</li>
+        <li>Omotayo Oluwatosin</li>
+        <li>Daniel Obialo</li>
+        <li>Carrena Oladipupo</li>
+        <li>Nwosu Benjamin</li>
+        <li>Ogunkunle Benjamin</li>
+        <li>Igomu Favour</li>
+        <li>Adejoh Agnes</li>
+      </ul>
+    </section>
+
+    <p class="site-footer__credits">
+      &copy;2026 Design by <a href="https://amakandukwu.com">Amaka N</a><br>
+      Built by <a href="https://github.com/temitopeibitoye108-alt/Group-18-Capstone-Project">Hajime Cohort Group 18</a>. All rights reserved<br>
+      <a href="https://tsacademyonline.com/">TSAcademy</a>
+    </p>
+
+  </footer>
+
+  <!-- Planet card template: script.js clones it and fills in the data-field elements -->
+  <template id="planet-card-template">
+    <article class="planet-card">
+
+      <figure class="planet-card__figure">
+        <img class="planet-card__image" data-field="image" alt="" width="120" height="120">
+      </figure>
+
+      <header class="planet-card__heading">
+        <h2 class="planet-card__name" data-field="name"></h2>
+        <p class="planet-card__type" data-field="type"></p>
+      </header>
+
+      <p class="planet-card__description" data-field="description"></p>
+
+      <!-- Gravity / Mass / Period -->
+      <dl class="planet-card__stats">
+        <div class="planet-card__stat">
+          <dt>Gravity</dt>
+          <dd data-field="gravity"></dd>
+        </div>
+        <div class="planet-card__stat">
+          <dt>Mass</dt>
+          <dd data-field="mass"></dd>
+        </div>
+        <div class="planet-card__stat">
+          <dt>Period</dt>
+          <dd data-field="period"></dd>
+        </div>
+      </dl>
+
+      <!-- Temperature / Moons / Diameter / Distance from the Sun -->
+      <ul class="planet-card__facts">
+        <li title="Temperature (K)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor">
+              <path d="M9 3.5A2.5 2.5 0 0 0 6.5 6v7.86a4.5 4.5 0 1 0 5 0V6A2.5 2.5 0 0 0 9 3.5Z" stroke-width="2"/>
+              <circle cx="18.5" cy="5" r="2.25" stroke-width="1.75"/>
+            </g>
+            <circle cx="9" cy="17.6" r="2"/>
+          </svg>
+          <span class="visually-hidden">Temperature in kelvin:</span>
+          <span data-field="temperature"></span>
+        </li>
+        <li title="Moons">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+          </svg>
+          <span class="visually-hidden">Moons:</span>
+          <span data-field="moons"></span>
+        </li>
+        <li title="Diameter (km)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+          <span class="visually-hidden">Diameter in kilometres:</span>
+          <span data-field="diameter"></span>
+        </li>
+        <li title="Distance from the Sun (10^6 km)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
+            </g>
+          </svg>
+          <span class="visually-hidden">Distance from the Sun in million kilometres:</span>
+          <span data-field="distance"></span>
+        </li>
+      </ul>
+
+    </article>
+  </template>
+
   <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

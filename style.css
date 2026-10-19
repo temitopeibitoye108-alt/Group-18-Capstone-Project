@@ -1,514 +1,795 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Inter, sans-serif, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+/* =========================================================
+   PLANET — ALL STYLES
+   1. Theme tokens (light + dark)
+   2. Base
+   3. Layout
+   4. Header (navbar + search)
+   5. Planet card
+   6. Planetary facts table
+   7. Footer
+   8. Reduced motion
+   ========================================================= */
+
+/* =========================================================
+   1. THEME TOKENS
+   ========================================================= */
+
+:root {
+  --bg: #f6f8ff;
+  --surface: #ffffff;
+  --text: #2b3442;
+  --muted: #4b6a9b;
+  --subtle: #788fb4;
+  --blue: #0079ff;
+  --blue-hover: #60abff;
+  --shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+  --logo-filter: none;
+  --font: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --page-width: 730px;
+  --gutter: 16px;
+
+  /* Planetary facts table */
+  --heading: #164baf;
+  --body-text: #0f2a44;
+  --table-text: #212121;
+  --table-head-bg: #164baf;
+  --table-head-text: #ffffff;
+  --table-group-bg: #d1e3ff;
+  --table-cell-bg: #f2f7ff;
+  --table-line: #ffffff;
 }
 
+/* Dark theme: switched on by the #theme-toggle checkbox in the header */
+body:has(#theme-toggle:checked) {
+  --bg: #131a35;
+  --surface: #1e2a52;
+  --text: #ffffff;
+  --muted: #9aa5cc;
+  --subtle: #8f9bc4;
+  --shadow: none;
+  --logo-filter: invert(1);
 
-/* =========================
-   HEADER
-
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 0;
+  --heading: #7fb2ff;
+  --body-text: #ffffff;
+  --table-text: #ffffff;
+  --table-group-bg: #2a3d73;
+  --table-cell-bg: #1e2a52;
+  --table-line: #131a35;
 }
 
+/* =========================================================
+   2. BASE
+   ========================================================= */
 
-/* =========================
-   PLANET LOGO
-   Leave the individual
-   logo pieces for later
-
-.planet-logo {
-    position: relative;
-    width: 90px;
-    height: 35px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.planet-logo img{
-    position: absolute;
-    object-fit: contain;
+html {
+  -webkit-text-size-adjust: 100%;
 }
-
-.logo-piece-1{
-    width: 72px;
-    height:46px;
-    opacity: 1;
-    top:5px;
-    left: -0px;
-
-}
-
-.logo-piece-2{
-   width: 21px;
-   height: 13px;
-   opacity: 1;
-   top: 33px;
-   left: 32px;
-
-}
-
-.logo-piece-3{
-    width: 3px;
-height: 3px;
-opacity: 1;
-top: 1px;
-left: 54px;
-
-}
-
-.logo-piece-4{
-    width: 6px;
-    height: 6px;
-    opacity: 1;
-    top: 0px;
-    left: 44px;
-
-}
-
-.logo-p {
-   width: 12px;
-   height: 18px;
-   opacity: 1;
-   top: 27px;
-   left: 60px;
-
-}
-
-.logo-l {
-    width:3px;
-   height:16px;
-   opacity:1;
-   top:24px;
-   left:73px;
-
-}
-
-.logo-a {
-   width:11px;
-height:13px;
-opacity:1;
-top:27px;
-left:78px;
-
-}
-
-.logo-n {
- width:11px;
- height:13px;
- opacity:1;
- top:27px;
- left:90px;
-
-}
-
-.logo-e {
- width:12px;
- height:13px;
- opacity:1;
- top:27px;
- left:102px;
-
-}
-
-.logo-t {
- width:5px;
- height:17px;
- opacity:1;
- top: 24px;
- left: 115px;
-
-}
-
-
-/* =========================
-   DARK MODE BUTTON
-========================= */
-
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: transparent;
-    color: #173b8f;
-    border: none;
-
-    padding: 8px 12px;
-
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-
-    cursor: pointer;
-}
-
-.moon-icon {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
-
-.body,
-.site-header,
-.table,
-p,
-h1,
-caption,
-table,
-thead th,
-tbody td,
-tbody th,
-.theme-toggle,
-footer {
-    transition:
-        background-color 0.4s ease,
-        color 0.4s ease,
-        border-color 0.4s ease;
-}
-
-
-/* =========================
-   PAGE
-========================= */
 
 body {
-    background: #F6F8FF;
-    color: #0F2A44;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-
-/* =========================
-   TABLE SECTION
-
-.table {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+/* Text for screen readers only */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
+/* =========================================================
+   3. LAYOUT
+   ========================================================= */
 
-/* =========================
-   HEADING
-
-h1 {
-    font-size: 32px;
-    color: #164BAF;
-    margin-bottom: 5px;
-
-    letter-spacing: -1px;
-    line-height: 1.5;
+/* Shared page column: navbar, planet card, table and footer all line up */
+.container {
+  width: min(var(--page-width), 100% - 2 * var(--gutter));
+  margin-inline: auto;
 }
 
-p {
-    font-size: 18px;
-    color: #0F2A44;
-    line-height: 1.5;
-    margin-bottom: 25px;
+main {
+  padding-top: 40px;
 }
 
-
-/* =========================
-   CAPTION
-
-caption {
-    font-size: 14px;
-    color: #0F2A44;
-    text-align: left;
-
-    line-height: 1.5;
-    margin-bottom: 8px;
-
-    caption-side: top;
+@media (max-width: 600px) {
+  main {
+    padding-top: 32px;
+  }
 }
 
+/* =========================================================
+   4. HEADER — NAVBAR + SEARCH
+   ========================================================= */
 
-/* =========================
-   PLANET TABLE
-
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-
-    background: #F6F8FF;
-
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+.theme-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-
-/* =========================
-   TABLE HEADER
-
-thead th {
-    background: #164BAF;
-    color: white;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    padding: 12px 15px;
-
-    text-align: center;
-
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+.nav {
+  padding-top: 120px;
 }
 
-thead th:first-child {
-    border-top-left-radius: 10px;
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
-thead th:last-child {
-    border-top-right-radius: 10px;
-    border-right: none;
+.logo-link {
+  display: inline-flex;
+  line-height: 0;
 }
 
-
-/* =========================
-   TABLE BODY
-
-tbody td,
-tbody th {
-    padding: 14px 15px;
-
-    text-align: center;
-
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+.logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  filter: var(--logo-filter);
+  transition: filter 0.25s ease;
 }
 
+/* Theme switch (label for the hidden #theme-toggle checkbox) */
 
-/* Planet names + values */
-
-tbody td {
-    background: #F6F8FF;
-    color: #0F2A44;
-
-    font-size: 14px;
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
 }
 
-
-/* Terrestrial / Jovian / Gas Giants /
-   Ice Giants / Dwarf Planets */
-
-tbody th {
-    background: #D1E3FF;
-    color: #0F2A44;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    vertical-align: middle;
+.theme-switch:hover {
+  border-color: var(--blue);
 }
 
-
-/* Remove the final borders */
-
-tbody tr:last-child td,
-tbody tr:last-child th {
-    border-bottom: none;
+.theme-checkbox:focus-visible + .nav .theme-switch {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue);
 }
 
-tbody td:last-child,
-tbody th:last-child {
-    border-right: none;
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
 }
 
-/* DESKTOP LAYOUT */
-
-.table {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
+.icon-moon {
+  stroke: none;
 }
 
-.site-header {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
+.icon-sun {
+  fill: currentColor;
 }
 
+.label-light,
+.icon-sun {
+  display: none;
+}
 
-/* =========================
-   FOOTER
+body:has(#theme-toggle:checked) .label-dark,
+body:has(#theme-toggle:checked) .icon-moon {
+  display: none;
+}
 
-footer {
-    width: 90%;
-    max-width: 1200px;
+body:has(#theme-toggle:checked) .label-light {
+  display: inline;
+}
 
-    margin: 0 auto;
-    padding: 25px 0;
+body:has(#theme-toggle:checked) .icon-sun {
+  display: block;
+}
 
-    border-top: 1px solid #D1E3FF;
+/* Search */
 
-    color: #164BAF;
+.search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px 8px 8px 22px;
+  background: var(--surface);
+  border: 2px solid transparent;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, background-color 0.25s ease;
+}
 
+.search:focus-within {
+  border-color: var(--blue);
+}
+
+.search-icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 18px;
+  text-overflow: ellipsis;
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-btn {
+  flex: none;
+  height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--blue);
+  color: #ffffff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background: var(--blue-hover);
+}
+
+.search-btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-top {
+    margin-bottom: 32px;
+  }
+
+  .search {
+    gap: 10px;
+    padding-left: 12px;
+  }
+
+  .search-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-input {
     font-size: 13px;
+  }
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  .search-btn {
+    padding: 0 20px;
+  }
 }
 
-footer p {
-    font-size: 13px;
-    color: #164BAF;
+/* =========================================================
+   5. PLANET CARD
+   Desktop/tablet: image on the left, details in a column
+   beside it. Mobile: image + name side by side, the rest
+   full width underneath.
+   ========================================================= */
+
+.planet-card {
+  display: grid;
+
+  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-areas:
+    "figure heading"
+    "figure desc"
+    "figure stats"
+    "figure facts";
+
+  align-items: start;
+  gap: 1.5rem 2rem;
+
+  padding: 3rem;
+
+  background: var(--surface);
+  color: var(--text);
+
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+
+  font-family: var(--font);
+
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-footer a {
-    color: #164BAF;
-    text-decoration: none;
+.planet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 36px -12px rgba(0, 121, 255, 0.28);
 }
 
-footer a:hover {
-    text-decoration: underline;
+.planet-card:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
 }
 
+/* Image + heading */
 
-/* =========================
-   DARK MODE
+.planet-card__figure {
+  grid-area: figure;
+  margin: 0;
+}
 
-.logo-dark {
+.planet-card__image {
+  display: block;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: var(--bg);
+
+  /* Keeps the alt text inside the circle if the image fails to load */
+  overflow: hidden;
+  font-size: 0.75rem;
+}
+
+.planet-card__heading {
+  grid-area: heading;
+  min-width: 0;
+}
+
+.planet-card__name {
+  margin: 0;
+
+  font-size: 1.625rem;
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+}
+
+.planet-card__type {
+  margin: 0.125rem 0 0;
+
+  font-size: 1rem;
+
+  color: var(--blue);
+}
+
+/* Description */
+
+.planet-card__description {
+  grid-area: desc;
+
+  margin: 0.5rem 0 0;
+
+  font-size: 0.9375rem;
+  line-height: 1.6;
+
+  color: var(--subtle);
+}
+
+/* Stats: Gravity / Mass / Period */
+
+.planet-card__stats {
+  grid-area: stats;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin: 0;
+  padding: 1rem 2rem;
+
+  background: var(--bg);
+
+  border-radius: 10px;
+}
+
+.planet-card__stat {
+  min-width: 0;
+}
+
+.planet-card__stat dt {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.planet-card__stat dd {
+  margin: 0.25rem 0 0;
+
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+/* Facts: Temperature / Moons / Diameter / Distance */
+
+.planet-card__facts {
+  grid-area: facts;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem 1.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  font-size: 0.9375rem;
+
+  color: var(--muted);
+}
+
+.planet-card__facts li {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  min-width: 0;
+}
+
+.planet-card__facts svg {
+  width: 24px;
+  height: 24px;
+
+  color: var(--text);
+  fill: currentColor;
+
+  flex-shrink: 0;
+}
+
+/* Loading / error message shown in place of the card */
+
+.planet-card__message {
+  margin: 0;
+  padding: 3rem;
+
+  background: var(--surface);
+  color: var(--muted);
+
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+
+  font-family: var(--font);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .planet-card {
+    grid-template-columns: 70px minmax(0, 1fr);
+    grid-template-areas:
+      "figure heading"
+      "desc desc"
+      "stats stats"
+      "facts facts";
+
+    gap: 1.75rem 1.5rem;
+
+    padding: 1.5rem;
+  }
+
+  .planet-card__heading {
+    align-self: center;
+  }
+
+  .planet-card__image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .planet-card__description {
+    margin-top: 0;
+  }
+
+  .planet-card__stats {
+    grid-template-columns: 1fr;
+
+    padding: 1.25rem;
+  }
+
+  .planet-card__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-card__message {
+    padding: 1.5rem;
+  }
+}
+
+/* =========================================================
+   6. PLANETARY FACTS TABLE
+   ========================================================= */
+
+.facts {
+  margin-top: 2rem;
+  font-family: var(--font-sans);
+}
+
+.facts__title {
+  margin: 0 0 0.5rem;
+
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+
+  color: var(--heading);
+}
+
+.facts__intro {
+  margin: 0 0 2.25rem;
+
+  font-size: 1.125rem;
+  line-height: 1.5;
+
+  color: var(--body-text);
+}
+
+.facts__table {
+  width: 100%;
+
+  /* Column widths are read from the header row */
+  table-layout: fixed;
+
+  /* "separate" (not "collapse") so the outer corners can be rounded */
+  border-collapse: separate;
+  border-spacing: 0;
+
+  font-size: 1rem;
+  text-align: center;
+
+  color: var(--table-text);
+}
+
+.facts__table caption {
+  padding-bottom: 1.25rem;
+
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+
+  color: var(--body-text);
+}
+
+.facts__table th,
+.facts__table td {
+  padding: 1.125rem 0.75rem;
+
+  border: 1px solid var(--table-line);
+
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.facts__table thead > tr > * {
+  background: var(--table-head-bg);
+  color: var(--table-head-text);
+  font-weight: 600;
+}
+
+.facts__table tbody th {
+  background: var(--table-group-bg);
+  font-weight: 600;
+}
+
+.facts__table tbody td {
+  background: var(--table-cell-bg);
+}
+
+.facts__table sup {
+  font-size: 0.7em;
+  line-height: 0;
+}
+
+/* Group column (spans 2 columns) takes 35%; the other three share the rest */
+.facts__table thead > tr > :first-child {
+  width: 35%;
+}
+
+/* Rounded outer corners */
+
+.facts__table thead > tr > :first-child {
+  border-top-left-radius: 15px;
+}
+
+.facts__table thead > tr > :last-child {
+  border-top-right-radius: 15px;
+}
+
+.facts__table tbody > tr:last-child > :first-child {
+  border-bottom-left-radius: 15px;
+}
+
+.facts__table tbody > tr:last-child > :last-child {
+  border-bottom-right-radius: 15px;
+}
+
+/* Mobile: as in the design, the Mass column and the source note are
+   dropped to fit the narrow screen */
+@media (max-width: 600px) {
+  .facts__table {
+    font-size: 0.75rem;
+  }
+
+  .facts__table caption {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .facts__source,
+  .facts__mass {
     display: none;
-}
-.dark-mode .logo-dark {
-    display: block;
-}
-.dark-mode .logo-light {
-    display: none;
-}
+  }
 
-.dark-mode {
-    background:var(--colors-neutral-900, #141D2F);
-;
-}
+  .facts__table th,
+  .facts__table td {
+    padding: 0.6875rem 0.375rem;
+  }
 
-.theme-toggle {
-    border: 1px solid transparent;
-    border-radius: 8px;
+  .facts__table thead > tr > :first-child {
+    width: 38%;
+  }
 
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+  .facts__table thead > tr > :last-child {
+    width: 35%;
+  }
 }
 
-.dark-mode .theme-toggle:hover {
-    border-color: #90A4D4;
-    box-shadow: 0 0 8px rgba(144, 164, 212, 0.2);
+/* =========================================================
+   7. FOOTER
+   About (team) on the left, credits on the right;
+   stacked on mobile.
+   ========================================================= */
+
+.site-footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2.5rem;
+
+  margin-top: 3rem;
+  padding-bottom: 120px;
+
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+
+  color: var(--muted);
 }
 
-.dark-mode h1 {
-    color: #FFFFFF;
+.site-footer__title {
+  margin: 0 0 1.25rem;
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
-.dark-mode p{
-    color: #90A4D4;
+.site-footer__intro {
+  margin: 0 0 0.75rem;
 }
 
-.dark-mode caption {
-    color:#D1E3FF;
-;
+/* Names run on as one comma-separated list */
+.site-footer__members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.4em;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.dark-mode table {
-    background: #141D2F;
-;
+.site-footer__members li:not(:last-child)::after {
+  content: ",";
 }
 
-.dark-mode thead th {
-    background: #141D2F;
-
+.site-footer__credits {
+  margin: 0;
+  font-weight: 500;
+  text-wrap: pretty;
 }
 
-.dark-mode tbody td {
-    background:#F2F7FF;
-;
-    color: #000000;
+/* Credit links look like the rest of the text until hovered or focused */
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: color 0.2s ease;
 }
 
-.dark-mode tbody th {
-    background: #90A4D4;
-;
-color: #000000;
+.site-footer a:hover {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.dark-mode .theme-toggle {
-    color:var(--colors-neutral-200, #90A4D4);
-;
+.site-footer a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
-.dark-mode footer {
-    border-top-color: #344B73;
-    color: white;
+@media (max-width: 1024px) {
+  .site-footer {
+    padding-bottom: 40px;
+  }
 }
 
-.dark-mode footer p,
-.dark-mode footer a {
-    color: #D5DCEC;
+@media (max-width: 600px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    margin-top: 2.5rem;
+  }
 }
 
+/* =========================================================
+   8. REDUCED MOTION
+   ========================================================= */
 
-/* =========================
-   MOBILE
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 
-@media (max-width: 768px) {
-
-    .mass-column {
-        display: none;
-    }
-
-    .site-header {
-        width: 92%;
-        padding: 8px 0;
-    }
-
-    table {
-        width: 100%;
-        min-width: 0;
-        table-layout: fixed;
-    }
-
-    .table {
-        width: 92%;
-        overflow-x: visible;
-    }
-
-    h1 {
-        font-size: 26px;
-        line-height: 1.3;
-    }
-
-    p {
-        font-size: 14px;
-        margin-bottom: 16px;
-    }
-
-    caption {
-        font-size: 12px;
-    }
-
-    thead th,
-    tbody td,
-    tbody th {
-        padding: 8px 4px;
-        font-size: 11px;
-    }
+  .planet-card:hover {
+    transform: none;
+  }
 }
-
