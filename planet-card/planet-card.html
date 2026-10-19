@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Planet Card</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Planet Card Styles -->
+  <link rel="stylesheet" href="planet-card.css" />
+
+  <!--
+    Demo page styles only. On the real site these tokens come from style.css.
+  -->
+  <style>
+    :root {
+      --bg: #f6f8ff;
+      --surface: #ffffff;
+      --text: #2b3442;
+      --muted: #4b6a9b;
+      --subtle: #788fb4;
+      --blue: #0079ff;
+      --shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+      --font: "Space Mono", ui-monospace, monospace;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #131a35;
+      --surface: #1e2a52;
+      --text: #ffffff;
+      --muted: #9aa5cc;
+      --subtle: #8f9bc4;
+      --shadow: none;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: var(--font);
+    }
+
+    main {
+      max-width: 730px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .demo-toggle {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.5rem 0.9rem;
+      border: 0;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #ffffff;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .demo-toggle:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    index.html copies in the elements marked data-component (see include.js),
+    so this page can also be opened on its own while working on the card.
+  -->
+
+  <main>
+    <!-- Planet Card will be rendered here by JavaScript -->
+    <section
+      id="planet-card-container"
+      aria-live="polite"
+      aria-label="Planet details"
+      data-component
+    ></section>
+  </main>
+
+  <!--
+    Planet Card Template
+    JavaScript clones this template and fills in the planet information.
+  -->
+  <template id="planet-card-template" data-component>
+    <article class="planet-card">
+
+      <figure class="planet-card__figure">
+        <img class="planet-card__image" data-field="image" alt="" width="120" height="120" />
+      </figure>
+
+      <header class="planet-card__heading">
+        <h2 class="planet-card__name" data-field="name"></h2>
+        <p class="planet-card__type" data-field="type"></p>
+      </header>
+
+      <p class="planet-card__description" data-field="description"></p>
+
+      <!-- Gravity / Mass / Period -->
+      <dl class="planet-card__stats">
+        <div class="planet-card__stat">
+          <dt>Gravity</dt>
+          <dd data-field="gravity"></dd>
+        </div>
+        <div class="planet-card__stat">
+          <dt>Mass</dt>
+          <dd data-field="mass"></dd>
+        </div>
+        <div class="planet-card__stat">
+          <dt>Period</dt>
+          <dd data-field="period"></dd>
+        </div>
+      </dl>
+
+      <!-- Temperature / Moons / Diameter / Distance from the Sun -->
+      <ul class="planet-card__facts">
+        <li title="Temperature (K)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor">
+              <path d="M9 3.5A2.5 2.5 0 0 0 6.5 6v7.86a4.5 4.5 0 1 0 5 0V6A2.5 2.5 0 0 0 9 3.5Z" stroke-width="2" />
+              <circle cx="18.5" cy="5" r="2.25" stroke-width="1.75" />
+            </g>
+            <circle cx="9" cy="17.6" r="2" />
+          </svg>
+          <span class="visually-hidden">Temperature in kelvin:</span>
+          <span data-field="temperature"></span>
+        </li>
+        <li title="Moons">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+          </svg>
+          <span class="visually-hidden">Moons:</span>
+          <span data-field="moons"></span>
+        </li>
+        <li title="Diameter (km)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9" />
+          </svg>
+          <span class="visually-hidden">Diameter in kilometres:</span>
+          <span data-field="diameter"></span>
+        </li>
+        <li title="Distance from the Sun (10^6 km)">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" />
+            </g>
+          </svg>
+          <span class="visually-hidden">Distance from the Sun in million kilometres:</span>
+          <span data-field="distance"></span>
+        </li>
+      </ul>
+
+    </article>
+  </template>
+
+  <!-- Demo Theme Toggle -->
+  <button
+    id="theme-toggle"
+    class="demo-toggle"
+    type="button"
+    aria-label="Toggle dark and light theme"
+  >
+    Toggle Theme
+  </button>
+
+  <!-- Planet Card JavaScript (loads Earth by default) -->
+  <script src="planet-card.js"></script>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById("theme-toggle");
+
+    themeToggle.addEventListener("click", () => {
+      const root = document.documentElement;
+
+      root.dataset.theme =
+        root.dataset.theme === "dark"
+          ? "light"
+          : "dark";
+    });
+  </script>
+
+</body>
+</html>
