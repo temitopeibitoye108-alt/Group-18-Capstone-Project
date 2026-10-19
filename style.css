@@ -10,7 +10,6 @@
 
 /* =========================
    HEADER
-========================= */
 
 .site-header {
     display: flex;
@@ -28,7 +27,6 @@
    PLANET LOGO
    Leave the individual
    logo pieces for later
-========================= */
 
 .planet-logo {
     position: relative;
@@ -191,7 +189,6 @@ body {
 
 /* =========================
    TABLE SECTION
-========================= */
 
 .table {
     width: 90%;
@@ -202,7 +199,6 @@ body {
 
 /* =========================
    HEADING
-========================= */
 
 h1 {
     font-size: 32px;
@@ -223,7 +219,6 @@ p {
 
 /* =========================
    CAPTION
-========================= */
 
 caption {
     font-size: 14px;
@@ -239,7 +234,6 @@ caption {
 
 /* =========================
    PLANET TABLE
-========================= */
 
 table {
     width: 100%;
@@ -259,7 +253,6 @@ table {
 
 /* =========================
    TABLE HEADER
-========================= */
 
 thead th {
     background: #164BAF;
@@ -288,7 +281,6 @@ thead th:last-child {
 
 /* =========================
    TABLE BODY
-========================= */
 
 tbody td,
 tbody th {
@@ -354,7 +346,6 @@ tbody th:last-child {
 
 /* =========================
    FOOTER
-========================= */
 
 footer {
     width: 90%;
@@ -391,7 +382,6 @@ footer a:hover {
 
 /* =========================
    DARK MODE
-========================= */
 
 .logo-dark {
     display: none;
@@ -477,7 +467,6 @@ color: #000000;
 
 /* =========================
    MOBILE
-========================= */
 
 @media (max-width: 768px) {
 

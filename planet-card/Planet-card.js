@@ -1,7 +1,11 @@
 const API_URL = "https://anurella.github.io/json/planet.json";
 
-const container = document.getElementById("planet-card-container");
-const template = document.getElementById("planet-card-template");
+// Looked up in startPlanetCard(), once the card's markup is on the page
+let container;
+let template;
+
+// The whole planet list is downloaded once and reused for every search.
+let planetList = null;
 
 function pick(obj, keys) {
   for (const key of keys) {
@@ -28,7 +32,11 @@ function normalizePlanet(raw) {
   };
 }
 
-async function fetchPlanet(name) {
+async function fetchPlanets() {
+  if (planetList) {
+    return planetList;
+  }
+
   const response = await fetch(API_URL);
 
   if (!response.ok) {
@@ -45,19 +53,27 @@ async function fetchPlanet(name) {
         ? data.data
         : [data];
 
+  planetList = list.map(normalizePlanet);
+
+  return planetList;
+}
+
+async function fetchPlanet(name) {
+  const planets = await fetchPlanets();
+
   const searchName = name.trim().toLowerCase();
+  const nameOf = (planet) => String(planet.name).toLowerCase();
 
-  const match = list.find((planet) => {
-    const normalized = normalizePlanet(planet);
-
-    return String(normalized.name).toLowerCase() === searchName;
-  });
+  // Exact name first, then the first planet that starts with what was typed
+  const match =
+    planets.find((planet) => nameOf(planet) === searchName) ||
+    planets.find((planet) => nameOf(planet).startsWith(searchName));
 
   if (!match) {
-    throw new Error(`No planet found called "${name}".`);
+    throw new Error(`No planet found called "${name.trim()}".`);
   }
 
-  return normalizePlanet(match);
+  return match;
 }
 
 function renderPlanetCard(planet) {
@@ -104,5 +120,32 @@ async function loadPlanetCard(name) {
   }
 }
 
-loadPlanetCard("Earth");
+function startPlanetCard() {
+  container = document.getElementById("planet-card-container");
+  template = document.getElementById("planet-card-template");
 
+  if (!container || !template) {
+    return;
+  }
+
+  // Navbar search (only on pages that have the search form)
+  const searchForm = document.querySelector(".search");
+
+  if (searchForm) {
+    searchForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = searchForm.querySelector("input").value;
+
+      if (name.trim()) {
+        loadPlanetCard(name);
+      }
+    });
+  }
+
+  loadPlanetCard("Earth");
+}
+
+// On index.html the card and header markup is loaded by include.js first;
+// the planet-card.html demo page already has it, so start straight away there.
+(window.componentsReady || Promise.resolve()).then(startPlanetCard);
