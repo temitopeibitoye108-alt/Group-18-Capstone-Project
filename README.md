@@ -35,11 +35,11 @@ Planet is a responsive web application that recreates the Capstone mockup by [Am
 - Participated in testing and supported the review process.
 
 ### Igomu Favour (@favourigomu)
-- Developed the Navigation Bar component.
+- Contributed to project development and team collaboration.
 
 ### Adejoh Agnes (@adejohagnes64-ops)
 - Contributed to the development and improvement of the Navigation Bar component.
-- 
+  
 ### Emmanuel Augustine Akpan (@Dupri85ng)
 - Contributed to the development and enhancement of the Planet Card component.
 
@@ -55,6 +55,7 @@ Planet is a responsive web application that recreates the Capstone mockup by [Am
 
 ### Edeh Joshua Nduka (@Numericalmethod)
 - Contributed to project development and team collaboration.
+- 
 ### Daniel Obialo (@ObialoDaniel)
 - Contributed to project development and team collaboration.
 
